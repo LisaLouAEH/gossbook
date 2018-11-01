@@ -9,9 +9,9 @@ class GossipsController < ApplicationController
       end
     
       def show
+        @user = User.find(params[:user_id])
         @gossip = Gossip.find(params[:id])
         @gossip_comments = Gossip.find(params[:id]).comments
-        puts @gossip_comments
       end
     
       def new
